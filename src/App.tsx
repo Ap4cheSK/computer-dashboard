@@ -1,8 +1,14 @@
+import { HashRouter, Route, Routes } from 'react-router-dom';
+import { Overview } from './Overview';
 import './css/global.scss';
 
 function App() {
 	return (
-		<p>hi</p>
+		<HashRouter>
+			<Routes>
+				<Route path="/" element={<Overview/>} />
+			</Routes>
+		</HashRouter>
 	)
 }
 
