@@ -6,10 +6,10 @@ function App() {
 	return (
 		<HashRouter>
 			<Routes>
-				<Route path="/" element={<Overview/>} />
+				<Route path="/" element={<Overview />} />
 			</Routes>
 		</HashRouter>
-	)
+	);
 }
 
 export default App;
