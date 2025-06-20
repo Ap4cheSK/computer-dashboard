@@ -1,73 +1,73 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
-$color_background: #000000;
-$color_background_light: #141414;
-$color_main_dark: #8E1616;
-$color_main: #D84040;
-$color_light: #EEEEEE;
+$color-bg: #181a20;
+$color-bg-alt: #23262f;
+$color-surface: #22242c;
+$color-primary: #ff5c5c;
+$color-primary-dark: #b32d2d;
+$color-accent: #3a86ff;
+$color-text: #f1f1f1;
+$color-muted: #a0a0a0;
 
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 	font-family: "Nunito", sans-serif;
 }
 
 html {
-	background: $color_background;
-
-	body {
-		min-height: 100vh;
-		display: grid;
-		grid-template-rows: auto 1fr auto;
-	}
+	background: $color-bg;
 }
 
-.sm-text {
-	font-size: 75%;
+body {
+	min-height: 100vh;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	background: $color-bg;
+	color: $color-text;
 }
 
-.bg-text {
-	font-size: 125%;
-}
+.sm-text { font-size: 0.85rem; color: $color-muted; }
+.bg-text { font-size: 1.15rem; }
 
 header {
-	padding: 4px 8px;
-	box-shadow: 0px 0px 5px $color_main_dark;
+	padding: 24px 32px;
+	background: $color-bg-alt;
+	box-shadow: 0 2px 16px 0 rgba(0,0,0,0.25);
+	border-bottom: 1px solid $color-surface;
 
 	h1 {
-		color: $color_main;
+		color: $color-primary;
+		font-weight: 800;
+		font-size: 2.2rem;
+		letter-spacing: 1px;
 		user-select: none;
 	}
 }
 
 footer {
-	padding: 4px 8px;
-	box-shadow: 0px 0px 5px $color_main_dark;
-	background: $color_main_dark;
+	padding: 20px 32px;
+	background: $color-bg-alt;
+	box-shadow: 0 -2px 16px 0 rgba(0,0,0,0.25);
+	border-top: 1px solid $color-surface;
 
 	.navbar {
 		display: flex;
-		justify-content: left;
-		gap: 16px;
-		
+		gap: 24px;
+
 		.navbar-link {
-			font-size: 28px;
+			font-size: 1.5rem;
 			text-decoration: none;
+			color: $color-muted;
+			padding: 8px 12px;
+			border-radius: 8px;
+			transition: background 0.15s, color 0.15s, transform 0.1s;
 
-			width: 32px;
-			height: 32px;
-
-			display: grid;
-			align-items: center;
-			justify-items: center;
-			padding: 4px;
-
-			color: $color_background;
-
-			transition: 0.1s ease-in-out;
 			&:hover {
-				color: $color_background_light;
-				transform: scale(1.2);
+				background: $color-surface;
+				color: $color-primary;
+				transform: translateY(-2px) scale(1.08);
 			}
 		}
 	}
