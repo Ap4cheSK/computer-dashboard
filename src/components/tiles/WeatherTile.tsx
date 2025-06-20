@@ -95,7 +95,7 @@ export default function WeatherTile() {
 					src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
 					alt={`${weatherData.weather[0].main}`} />
 
-				<h2 title='Location'>Košice (UTC +{weatherData.timezone / 3600})</h2>
+				<h2 title='Location' className='weather-loc tile-accent'>Košice (UTC +{weatherData.timezone / 3600})</h2>
 				<p className='sm-text' title='GeoLocation'>{weatherData.coord.lat}, {weatherData.coord.lon}</p>
 				<p className='bg-text' title='Weather description'>{weatherData.weather[0].description}</p>
 			</div>
@@ -107,16 +107,17 @@ export default function WeatherTile() {
 				<p title='Humidity' className='bg-text'><i className="fa-solid fa-droplet"></i> {weatherData.main.humidity}%</p>
 			</div>
 
-			<p title='Wind'><i className="fa-solid fa-wind"></i> {weatherData.wind.speed} m/s | {weatherData.wind.deg}°</p>
+			<p title='Updated at'><i className="fa-solid fa-clock"></i> {new Date(weatherData.dt * 1000).toLocaleString('sk-SK')}</p>
+		</section>
+	);
+}
+
+// presunut do samostatneho page
+			{/* <p title='Wind'><i className="fa-solid fa-wind"></i> {weatherData.wind.speed} m/s | {weatherData.wind.deg}°</p>
 			<p title='Pressure'>{weatherData.main.pressure} hPa</p>
 			<p title='Visibility'><i className="fa-solid fa-eye"></i> {weatherData.visibility / 1000} km</p>
 			
 			<div className="tiles-content-horizontal">
 				<p title='Sunrise'><i className="fa-solid fa-sun"></i> {new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString('sk-SK')}</p>
 				<p title='Sunset'><i className="fa-solid fa-moon"></i> {new Date(weatherData.sys.sunset * 1000).toLocaleTimeString('sk-SK')}</p>
-			</div>
-
-			<p title='Updated at'><i className="fa-solid fa-clock"></i> {new Date(weatherData.dt * 1000).toLocaleString('sk-SK')}</p>
-		</section>
-	);
-}
+			</div> */}

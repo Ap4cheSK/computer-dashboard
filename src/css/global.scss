@@ -32,7 +32,7 @@ body {
 .bg-text { font-size: 1.15rem; }
 
 header {
-	padding: 24px 32px;
+	padding: 8px 16px;
 	background: $color-bg-alt;
 	box-shadow: 0 2px 16px 0 rgba(0,0,0,0.25);
 	border-bottom: 1px solid $color-surface;
@@ -47,7 +47,7 @@ header {
 }
 
 footer {
-	padding: 20px 32px;
+	padding: 8px 16px;
 	background: $color-bg-alt;
 	box-shadow: 0 -2px 16px 0 rgba(0,0,0,0.25);
 	border-top: 1px solid $color-surface;

@@ -1,3 +1,4 @@
+import { TukeTile } from "./components/tiles/TukeTile";
 import WeatherTile from "./components/tiles/WeatherTile";
 import { WebFooter } from "./components/WebFooter";
 import { WebHeader } from "./components/WebHeader";
@@ -11,6 +12,7 @@ export function Overview() {
 			<main>
 				<div className="tile-wrapper">
 					<WeatherTile/>
+					<TukeTile/>
 				</div>
 			</main>
 

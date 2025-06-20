@@ -10,7 +10,8 @@ $color-background-light: #292b36;
 $color-main: $color-primary;
 
 .tile-wrapper {
-	display: grid;
+	display: flex;
+	flex-flow: row wrap;
 	padding: 32px;
 	gap: 32px;
 	justify-content: center;
@@ -22,6 +23,10 @@ $color-main: $color-primary;
 	}
 
 	.tile {
+		display: grid;
+		justify-items: center;
+		align-items: center;
+		align-content: center;
 		background: $color-surface;
 		border-radius: 18px;
 		border: none;
@@ -29,15 +34,18 @@ $color-main: $color-primary;
 		width: 320px;
 		height: 320px;
 		padding: 12px;
-		display: flex;
-		flex-direction: column;
 		gap: 16px;
 		color: $color-text;
 		transition: box-shadow 0.2s, transform 0.2s;
+		text-align: center;
 
 		&:hover {
 			box-shadow: 0 8px 48px 0 rgba(58,134,255,0.12);
 			transform: translateY(-4px) scale(1.03);
+		}
+
+		.tile-accent {
+			color: $color-primary;
 		}
 	}
 }
@@ -45,17 +53,23 @@ $color-main: $color-primary;
 .weather-tile {
 	.weather-location {
 		display: grid;
-		grid-template-columns: auto 1fr;
-		grid-template-rows: repeat(3, auto);
+		grid-template-rows: repeat(4, auto);
+		justify-items: center;
 		padding-bottom: 4px;
 		column-gap: 8px;
+		row-gap: 2px;
 		text-align: center;
-		align-items: start;
+		align-items: center;
+
+		h2 {
+			font-size: 20px;
+		}
 
 		.weather-icon {
 			background: $color-background-light;
 			border-radius: 100%;
 			width: 80px;
+			margin-bottom: 16px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -63,6 +77,7 @@ $color-main: $color-primary;
 			justify-content: center;
 		}
 	}
+	text-align: center;
 }
 
 @keyframes loading {
@@ -87,4 +102,11 @@ $color-main: $color-primary;
 	width: 40px;
 	background-color: $color-main;
 	animation: loading 1.5s infinite ease-in-out;
+}
+
+.tuke-tile {
+	.tuke-logo {
+		max-width: 192px;
+		filter: brightness(10);
+	}
 }
