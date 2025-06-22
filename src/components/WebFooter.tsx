@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export function WebFooter() {
+export default function WebFooter() {
 	return (
 		<footer>
 			<nav className="navbar">

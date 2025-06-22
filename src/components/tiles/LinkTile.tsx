@@ -1,5 +1,3 @@
-import { useNavigate } from "react-router-dom";
-
 interface LinkTileProps {
 	name: string;
 	redirectUrl: string;
@@ -7,18 +5,17 @@ interface LinkTileProps {
 }
 
 export default function LinkTile({ name, redirectUrl, image }: LinkTileProps) {
-	const navigate = useNavigate();
 
 	function handleRedirect() {
 		setTimeout(() => {
-			navigate(redirectUrl);
+			window.open(redirectUrl, "_blank");
 		}, 200);
 	}
 
 	return (
 		<section className="tile link-tile" onClick={handleRedirect}>
-			<img src={image} alt={name} />
-			<span>{name}</span>
+			<img className="link-tile-background" src={image} alt={name} />
+			<span className="link-tile-name">{name}</span>
 		</section>
 	);
 }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import tukeLogo from "../../assets/TUKE1_B_CMYK.png";
 
-export function TukeTile() {
+export default function TukeTile() {
 	async function fetchStartDate() {
 		try {
 			const response = await fetch("https://jsonblob.com/api/jsonBlob/1324152351799566336");
